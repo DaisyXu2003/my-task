@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>My Tasks</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAJzklEQVR4nO3cy3GkSBRA0dFEW4EBkv/mtKyZhTYKjaQoqCT53HMMIFgk70JS1MuyLP8A0PPv0ScAwDEEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKL+HH0C1/b+/nfUoV5f30YdCuARL8uyHH0OlzRw9H8mA8A0toC22Gn673pkgC8EYLW9Z7QGAHMIwDpzprMGABMIAECUl8ArfHtjPuS17X5HBviJJ4CnPD+jP0a/WQ/MJwBH+pj+dvyBQwjAYT7PfQ0A5vMlMPLDtdlB3UwAjnGSmXuS04BneJG2mS2gA5xk7J7kNGAI63kDAZjtJMv0JKcBA1nVawnAKUx+enWdcFfW9ioCMJUPvoDzEIB5TjL93SJxb1b44wRgsJ8Wn0UJnI0AjPTTl70/TX+bP8CBfAcwxoYbfNMfOJYngAF+v+U/ydY/wBcCMMC30/yXP3o7dvprD/dmhT9OAMb4pQEA5yQAs53h9uQM5wB7sLZXEYBhHll551md5zkTGMWqXksARvp9/Z1tdZ7tfOAZ1vMGAjDYtVbh6+vbtU4Y/s8y3sx3AJOceYGe+dyA/XgCGO//89SEBU7IE8AuTHzg/DwBPGXUL/19MQDM97Isy9HncCXTJrVnCGBvngAAogRgnTk35m7/gQkEYLW9p7PpD8whAFvsN6NNf2AaL4GfMvCdsNEPTCYAAFG2gACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIOrP0Sdwbe/vf0cd6vX1bdShAB7xsizL0edwSQNH/2cyAExjC2iLnab/rkcG+EIAVtt7RmsAMIcArDNnOmsAMIEAAER5CbzCtzfmQ17b7ndkgJ94AnjKqBlt1gPzCQBAlAAARPkSGD864trsoG4mAGlGPzfwsYxlYANbQF2mP3diPW8gAFGuFu7Hql5LAIpcJ9yVtb2KAABECUCOWyTuzQp/nAAARAkAQJQAAEQJAECUAOT4YJJ7s8IfJwAAUQJQ5BaJu7K2VxGAKNcJ92NVryUAXa4W7sR63sDfQad9XDO+nOTSjP7NBADXD0TZAgKIEgCAKAF4yqjdc7vwwHwvy7IcfQ5XMm1S25cH9uYJACBKANaZc2Pu9h+YQABW23s6m/7AHAKwxX4z2vQHpvES+CkD3wkb/cBkAgAQZQsIIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACi/hx9Atf2/v531KFeX99GHQrgES/Lshx9Dpc0cPR/JgPANLaAtthp+u96ZIAvBGC1vWe0BgBzCMA6c6azBgATCABAlJfAK3x7Yz7kte1+Rwb4iSeAp4ya0WY9MJ8AAEQJAECUL4HxoyOuzQ7qZgKQZvRzAx/LWAY2sAXUZfpzJ9bzBgIQ5WrhfqzqtQSgyHXCXVnbqwgAQJQA5LhF4t6s8McJAECUAABECQBAlAAARAlAjg8muTcr/HECABAlAEVukbgra3sVAYhynXA/VvVaAtDlauFOrOcN/B102sc148tJLs3o30wAcP1AlC0ggCgBAIgSgKeM2j23Cw/M97Isy9HncCXTJrV9eWBvngAAogRgnTk35m7/gQkEYLW9p7PpD8whAFvsN6NNf2AaL4GfMvCdsNEPTCYAAFG2gACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIOo/t00zWfwR7/AAAAAASUVORK5CYII=">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="My Tasks">
+<meta name="theme-color" content="#f4f4f3">
+<style>
+  :root {
+    --bg: #f4f4f3;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --text-dim: #8a8a88;
+    --border: #e3e3e1;
+    --accent: #3a3a3a;
+    --accent-dim: #eaeae8;
+    --danger: #e05656;
+    --done: #b0b0b0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+    --overlay: rgba(0,0,0,0.35);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17171a; --card: #222224; --text: #f0f0f0; --text-dim: #9a9a98;
+      --border: #333335; --accent: #7a7a7c; --accent-dim: #333336;
+      --danger: #ff6b6b; --done: #666; --shadow: 0 1px 3px rgba(0,0,0,0.3);
+      --overlay: rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17171a; --card: #222224; --text: #f0f0f0; --text-dim: #9a9a98;
+    --border: #333335; --accent: #7a7a7c; --accent-dim: #333336;
+    --danger: #ff6b6b; --done: #666; --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --overlay: rgba(0,0,0,0.55);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+  .app { max-width:640px; margin:0 auto; padding-bottom:150px; }
+
+  header { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 6px; }
+  .icon-btn { width:34px; height:34px; display:flex; align-items:center; justify-content:center; border-radius:0; color:var(--text); cursor:pointer; flex:0 0 auto; }
+  .icon-btn svg { width:20px; height:20px; }
+  .month-title { display:flex; align-items:center; gap:14px; font-size:18px; font-weight:600; }
+  .month-title .chev { font-size:15px; color:var(--text-dim); cursor:pointer; padding:4px 8px; user-select:none; }
+  .status-dot { display: none; }
+
+  .section-header { font-size:20px; font-weight:700; padding:18px 16px 6px; }
+  .search-bar-wrap { padding: 8px 16px 4px; }
+  .search-bar {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 0;
+    padding: 8px 10px;
+  }
+  .search-bar svg { width: 17px; height: 17px; color: var(--text-dim); flex: 0 0 auto; }
+  .search-bar input {
+    flex: 1; border: none; background: none; outline: none;
+    font-size: 14px; color: var(--text); min-width: 0;
+  }
+  .search-clear { color: var(--text-dim); font-size: 18px; cursor: pointer; flex: 0 0 auto; padding: 0 2px; }
+
+  .week-strip { display:flex; padding:6px 10px 4px; gap:2px; }
+  .week-day { flex:1; display:flex; flex-direction:column; align-items:center; padding:4px 2px 8px; border-radius:0; cursor:pointer; min-width:0; }
+  .week-day.selected-col { background:var(--accent-dim); }
+  .dow-label { font-size:11px; color:var(--text-dim); margin-bottom:6px; }
+  .date-circle { width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:600; }
+  .date-circle.today { border:1.5px solid var(--accent); color:var(--accent); }
+  .date-circle.selected { background:var(--accent); color:#fff; }
+  .day-chips { margin-top:6px; width:100%; display:flex; flex-direction:column; gap:3px; align-items:center; }
+  .day-chip { font-size:10px; color:var(--text-dim); background:rgba(120,120,120,0.08); border-radius:0; padding:2px 4px; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:90%; text-align:center; }
+  .day-chip.done { text-decoration:line-through; opacity:0.5; }
+  .day-more { font-size:9px; color:var(--text-dim); }
+
+  .month-grid { padding:6px 10px 10px; }
+  .month-dow-row { display:flex; margin-bottom:4px; }
+  .month-dow-row div { flex:1; text-align:center; font-size:11px; color:var(--text-dim); }
+  .month-rows { display:flex; flex-direction:column; gap:2px; }
+  .month-row { display:flex; }
+  .month-cell { flex:1; aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; position:relative; }
+  .month-cell-inner { width:68%; height:112%; border-radius:0; display:flex; align-items:center; justify-content:center; }
+  .month-cell-inner.selected-cell { background:var(--accent-dim); }
+  .month-cell .num { width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .month-cell.dim .num { color:var(--text-dim); opacity:0.4; }
+  .month-cell .num.today { border:1.5px solid var(--accent); color:var(--accent); }
+  .month-cell .num.selected { background:var(--accent); color:#fff; }
+  .month-dot { width:4px; height:4px; border-radius:50%; background:var(--accent); margin-top:2px; position:absolute; bottom:6px; }
+
+  .day-panel { padding:6px 16px; }
+  .day-panel-label { font-size:14px; color:var(--text-dim); margin:8px 4px 10px; }
+  .list-label { font-size:13px; color:var(--text-dim); margin:14px 4px 8px; }
+
+  /* swipe-to-delete */
+  .swipe-row { position:relative; overflow:hidden; margin-bottom:8px; touch-action: pan-y; }
+  .swipe-row.no-margin { margin-bottom:0; }
+  .swipe-delete-bg {
+    position:absolute; top:0; right:0; bottom:0; width:76px;
+    background:var(--danger); color:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:600; cursor:pointer;
+  }
+  .swipe-row.radius-card .swipe-delete-bg { border-radius:0; }
+  .swipe-row.radius-summary .swipe-delete-bg { border-radius:0; }
+  .swipe-row.summary-swipe { margin:0 16px 10px; }
+  .swipe-row.listitem-swipe { margin-bottom:3px; }
+  .swipe-row.listitem-swipe .swipe-delete-bg { width:70px; font-size:12px; }
+  .swipe-content { position:relative; will-change: transform; }
+
+  .task-card { background:var(--card); border-radius:0; padding:12px 14px; box-shadow:var(--shadow); display:flex; align-items:flex-start; gap:10px; }
+  .checkbox { width:22px; height:22px; border-radius:0; border:2px solid var(--border); flex:0 0 22px; margin-top:1px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .checkbox.checked { background:var(--accent); border-color:var(--accent); }
+  .checkbox svg { width:13px; height:13px; opacity:0; }
+  .checkbox.checked svg { opacity:1; }
+  .task-body { flex:1; min-width:0; cursor:pointer; }
+  .task-title { font-size:15px; line-height:1.4; word-break:break-word; }
+  .task-title.done { color:var(--done); text-decoration:line-through; }
+  .task-title.overdue { color:var(--danger); }
+  .task-desc-preview {
+    font-size:13px; color:var(--text-dim); margin-top:2px;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .task-meta { display:flex; gap:8px; margin-top:4px; flex-wrap:wrap; }
+  .meta-tag { font-size:12px; color:var(--text-dim); }
+  .meta-tag.overdue { color:var(--danger); }
+
+  .empty-state { text-align:center; color:var(--text-dim); padding:50px 20px 30px; }
+  .empty-state svg { width:90px; height:90px; opacity:0.85; margin-bottom:12px; }
+  .empty-state .t1 { font-size:16px; color:var(--text); margin-bottom:6px; }
+  .empty-state .t2 { font-size:13px; }
+
+  /* Lists tab */
+  .detail-header { display:flex; align-items:center; justify-content:space-between; padding:14px 8px 6px; }
+  .detail-title { font-size:17px; font-weight:600; cursor:pointer; }
+  .detail-title-input {
+    font-size:17px; font-weight:600; border:none;
+    background:none; color:var(--text); outline:none; padding:2px 4px; width:55%; text-align:center;
+  }
+  .list-item-rename-input {
+    flex:1; font-size:14px; border:none;
+    background:none; color:var(--text); outline:none; padding:2px 0; min-width:0; font-family:inherit;
+  }
+  .list-summary-card { background:var(--card); border-radius:0; box-shadow:var(--shadow); padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; }
+  .list-summary-name { font-size:16px; font-weight:600; }
+  .list-summary-count { font-size:13px; color:var(--text-dim); margin-top:2px; }
+  .list-card { background:var(--card); border-radius:0; box-shadow:var(--shadow); margin:0 16px 14px; padding:12px 14px 10px; overflow:hidden; }
+  .list-card-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+  .list-card-title { font-size:16px; font-weight:600; }
+  .list-item-row { display:flex; align-items:center; gap:10px; padding:7px 14px; background:var(--card); }
+  .list-item-title { flex:1; font-size:14px; min-width:0; word-break:break-word; }
+  .list-item-title.done { color:var(--done); text-decoration:line-through; }
+
+  /* floating add button */
+  .fab-btn {
+    position: fixed;
+    bottom: 88px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    line-height: 1;
+  }
+
+  /* bottom tab bar */
+  .tab-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    display: flex;
+    z-index: 15;
+    padding-bottom: env(safe-area-inset-bottom);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .tab-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 9px 4px 8px;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .tab-item svg { width: 22px; height: 22px; }
+  .tab-item span { font-size: 11px; }
+  .tab-item.active { color: var(--accent); }
+
+  /* undo toast */
+  .undo-toast {
+    position: fixed; left: 50%; bottom: 84px;
+    transform: translateX(-50%) translateY(16px);
+    background: rgba(30,30,30,0.95); color: #fff;
+    padding: 11px 10px 11px 16px; border-radius: 0;
+    display: flex; align-items: center; gap: 16px;
+    font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    z-index: 25; opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    max-width: calc(100% - 32px);
+  }
+  .undo-toast.show { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+  .undo-toast button {
+    background: none; border: none; color: #fff; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.03em; cursor: pointer; padding: 6px 8px;
+    flex: 0 0 auto;
+  }
+  .add-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay);
+    display: flex;
+    align-items: flex-end;
+    z-index: 30;
+  }
+  .add-overlay.hidden { display: none; }
+  .add-panel {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--card);
+    border-radius: 0;
+    padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+  }
+  .add-panel-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .add-panel-title { font-size:16px; font-weight:600; }
+  .add-close { font-size:22px; color:var(--text-dim); cursor:pointer; padding:2px 8px; }
+  .add-input-row { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .add-panel input[type=text] {
+    flex:1; border:1px solid var(--border); border-radius:0; padding:12px 12px;
+    font-size:15px; color:var(--text); background:var(--bg); outline:none;
+  }
+  .confirm-btn {
+    width:44px; height:44px; border-radius:50%; background:var(--accent); color:#fff;
+    border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; flex:0 0 auto;
+  }
+  .confirm-btn svg { width:20px; height:20px; }
+  .confirm-btn:disabled { opacity:0.4; }
+  .add-options { display:flex; flex-direction:column; gap:12px; }
+  .add-options.hidden { display: none; }
+  .add-options label { font-size:12px; color:var(--text-dim); display:block; margin-bottom:4px; }
+  .time-hint { color: var(--accent); font-weight: 500; }
+  .add-field { width:100%; }
+  .add-panel select, .add-panel input[type=date], .add-panel input[type=time] {
+    width:100%; font-size:14px; padding:10px; border-radius:0; border:1px solid var(--border);
+    background:var(--bg); color:var(--text); text-align:left;
+  }
+  .add-panel textarea {
+    width:100%; font-size:14px; padding:10px; border-radius:0; border:1px solid var(--border);
+    background:var(--bg); color:var(--text); resize:vertical; font-family:inherit; outline:none;
+  }
+  #taskDetailTitleInput { width:100%; padding: 10px 12px; }
+  .detail-save-btn {
+    width:100%; margin-top:16px; padding:13px; border-radius:0; border:none;
+    background:var(--accent); color:#fff; font-size:15px; font-weight:600; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ===== Inbox view ===== -->
+  <div id="inboxView" style="display:none;">
+    <div class="section-header">Inbox</div>
+    <div class="search-bar-wrap">
+      <div class="search-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="inboxSearchInput" placeholder="Search tasks" />
+        <div class="search-clear" id="inboxSearchClear" style="display:none;">×</div>
+      </div>
+    </div>
+    <div class="day-panel" style="padding-top:4px;">
+      <div id="inboxTaskList"></div>
+    </div>
+  </div>
+
+  <!-- ===== Calendar view ===== -->
+  <div id="calendarView">
+    <header>
+      <div class="icon-btn" style="visibility:hidden;">
+        <svg viewBox="0 0 24 24"></svg>
+      </div>
+      <div class="month-title">
+        <span class="chev" id="prevMonth">‹</span>
+        <span id="monthLabel">September</span>
+        <span class="chev" id="nextMonth">›</span>
+        <span class="status-dot offline" id="statusDot"></span>
+      </div>
+      <div class="icon-btn" id="todayBtn" title="Jump to today">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="9"/></svg>
+      </div>
+    </header>
+
+    <div id="calendarArea"></div>
+
+    <div class="day-panel">
+      <div class="day-panel-label" id="dayPanelLabel"></div>
+      <div id="dayTaskList"></div>
+      <div id="unscheduledArea"></div>
+    </div>
+  </div>
+
+  <!-- ===== Lists view ===== -->
+  <div id="listsView" style="display:none;">
+    <div id="listsOverview">
+      <div class="section-header">Lists</div>
+      <div id="listsContainer"></div>
+    </div>
+    <div id="listsDetail" style="display:none;">
+      <div class="detail-header">
+        <div class="icon-btn" id="listBackBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </div>
+        <div class="detail-title" id="listDetailName">List</div>
+        <input type="text" class="detail-title-input" id="listDetailNameInput" style="display:none;" />
+        <div class="icon-btn" style="visibility:hidden;"><svg viewBox="0 0 24 24"></svg></div>
+      </div>
+      <div class="day-panel" style="padding-top:4px;">
+        <div id="listDetailItems"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<button class="fab-btn" id="fabBtn">+</button>
+
+<nav class="tab-bar">
+  <button class="tab-item" id="tabInbox" data-tab="inbox">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v10.5l-2.5 5.5h-11L4 14.5V4z"/><path d="M4 14.5h5a1 1 0 0 1 1 1 2 2 0 0 0 2 2 2 2 0 0 0 2-2 1 1 0 0 1 1-1h5"/></svg>
+    <span>Inbox</span>
+  </button>
+  <button class="tab-item active" id="tabCalendar" data-tab="calendar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+    <span>Calendar</span>
+  </button>
+  <button class="tab-item" id="tabLists" data-tab="lists">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg>
+    <span>Lists</span>
+  </button>
+</nav>
+
+<div class="undo-toast" id="undoToast">
+  <span id="undoToastMsg">Task deleted</span>
+  <button id="undoBtn">UNDO</button>
+</div>
+
+<div class="add-overlay hidden" id="addOverlay">
+  <div class="add-panel">
+    <div class="add-panel-header">
+      <div class="add-panel-title" id="addPanelTitle">New Task</div>
+      <div class="add-close" id="addClose">×</div>
+    </div>
+    <div class="add-input-row">
+      <input type="text" id="newTaskInput" placeholder="What do you need to do?" />
+      <button class="confirm-btn" id="confirmBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+      </button>
+    </div>
+    <div class="add-options" id="addOptions">
+      <div class="add-field">
+        <label>Date</label>
+        <input type="date" id="newTaskDate" />
+      </div>
+      <div class="add-field">
+        <label>Time (optional) <span class="time-hint" id="timeHint" style="display:none;">· detected</span></label>
+        <input type="time" id="newTaskTime" />
+      </div>
+      <div class="add-field">
+        <label>Description (optional)</label>
+        <textarea id="newTaskDesc" placeholder="Add notes..." rows="3"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="add-overlay hidden" id="taskDetailOverlay">
+  <div class="add-panel">
+    <div class="add-panel-header">
+      <div class="add-panel-title">Task Details</div>
+      <div class="add-close" id="taskDetailClose">×</div>
+    </div>
+    <div class="add-options">
+      <div class="add-field">
+        <label>Title</label>
+        <input type="text" id="taskDetailTitleInput" placeholder="Task title" />
+      </div>
+      <div class="add-field">
+        <label>Date</label>
+        <input type="date" id="taskDetailDate" />
+      </div>
+      <div class="add-field">
+        <label>Time <span class="time-hint" id="taskDetailTimeHint" style="display:none;">· detected</span></label>
+        <input type="time" id="taskDetailTime" />
+      </div>
+      <div class="add-field">
+        <label>Description</label>
+        <textarea id="taskDetailDesc" placeholder="Add notes..." rows="4"></textarea>
+      </div>
+    </div>
+    <button class="detail-save-btn" id="taskDetailSaveBtn">Save</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  let state = {
+    tasks: [],
+    lists: [],
+  };
+  let selectedDate = todayStr();
+  let viewMode = 'month';
+  let lastMonthKey = null;
+  let currentTab = 'calendar'; // 'inbox' | 'calendar' | 'lists'
+  let addMode = 'task'; // 'task' | 'list' | 'listItem'
+  let listsSubView = 'overview'; // 'overview' | 'detail'
+  let currentOpenListId = null;
+  let lastDetectedTimeMatch = null;
+  let ready = false;
+
+  const statusDot = document.getElementById('statusDot');
+  function setStatus(s) { statusDot.className = 'status-dot ' + s; }
+
+  function haptic(ms) {
+    try { if (navigator.vibrate) navigator.vibrate(ms || 10); } catch (e) {}
+  }
+
+  // manual double-tap detection (native dblclick is unreliable on mobile/iframes)
+  function attachDoubleTap(el, handler) {
+    let lastTime = 0;
+    el.addEventListener('click', (e) => {
+      const now = Date.now();
+      if (now - lastTime < 400) {
+        lastTime = 0;
+        handler(e);
+      } else {
+        lastTime = now;
+      }
+    });
+  }
+
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+  function pad(n) { return String(n).padStart(2,'0'); }
+  function todayStr() { const d = new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function parseDate(str) { const [y,m,d] = str.split('-').map(Number); return new Date(y, m-1, d); }
+  function toStr(date) { return date.getFullYear()+'-'+pad(date.getMonth()+1)+'-'+pad(date.getDate()); }
+  function addDays(date, n) { const d = new Date(date); d.setDate(d.getDate()+n); return d; }
+  function addMonths(date, n) { const d = new Date(date); d.setMonth(d.getMonth()+n); return d; }
+  const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const MONTH_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const DOW_FULL = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const WEEKDAY_SHORT = ['S','M','T','W','T','F','S'];
+
+  function tasksOnDate(dateStr) { return state.tasks.filter(t => t.dueDate === dateStr); }
+  function fmtTime(hhmm) {
+    const [h, m] = hhmm.split(':').map(Number);
+    const period = h >= 12 ? 'PM' : 'AM';
+    const h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + ':' + pad(m) + ' ' + period;
+  }
+  function fmtShortDate(dateStr) {
+    const d = parseDate(dateStr);
+    return MONTH_SHORT[d.getMonth()] + ' ' + d.getDate();
+  }
+
+  // ---------- swipe-to-delete helper ----------
+  const REVEAL_WIDTH = 76;
+  let openSwipeRow = null;
+
+  function closeOpenSwipe() {
+    if (openSwipeRow) {
+      const content = openSwipeRow.querySelector('.swipe-content');
+      if (content) { content.style.transition = 'transform 0.2s ease'; content.style.transform = 'translateX(0)'; }
+      openSwipeRow.dataset.open = '0';
+    }
+    openSwipeRow = null;
+  }
+
+  // wraps innerContentEl in a swipe-to-delete row; onDelete is called when the red button is tapped
+  function makeSwipeRow(innerContentEl, onDelete, extraRowClass) {
+    const row = document.createElement('div');
+    row.className = 'swipe-row' + (extraRowClass ? ' ' + extraRowClass : '');
+    row.dataset.open = '0';
+
+    const bg = document.createElement('div');
+    bg.className = 'swipe-delete-bg';
+    bg.textContent = 'Delete';
+    bg.onclick = (e) => { e.stopPropagation(); haptic(15); openSwipeRow = null; onDelete(); };
+
+    const content = document.createElement('div');
+    content.className = 'swipe-content';
+    content.appendChild(innerContentEl);
+
+    row.appendChild(bg);
+    row.appendChild(content);
+
+    let startX = 0, startY = 0, baseX = 0, dragging = false, decided = false, horizontal = false;
+
+    row.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) return;
+      if (openSwipeRow && openSwipeRow !== row) closeOpenSwipe();
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      baseX = row.dataset.open === '1' ? -REVEAL_WIDTH : 0;
+      dragging = true; decided = false; horizontal = false;
+    }, { passive: true });
+
+    row.addEventListener('touchmove', (e) => {
+      if (!dragging) return;
+      const dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      if (!decided) {
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        decided = true;
+        horizontal = Math.abs(dx) > Math.abs(dy) * 1.3;
+        if (!horizontal) { dragging = false; return; }
+      }
+      let newX = baseX + dx;
+      if (newX > 0) newX = 0;
+      if (newX < -REVEAL_WIDTH) newX = -REVEAL_WIDTH + (newX + REVEAL_WIDTH) * 0.2;
+      content.style.transition = 'none';
+      content.style.transform = 'translateX(' + newX + 'px)';
+    }, { passive: true });
+
+    row.addEventListener('touchend', (e) => {
+      if (!dragging || !horizontal) { dragging = false; return; }
+      dragging = false;
+      const dx = e.changedTouches[0].clientX - startX;
+      const finalX = baseX + dx;
+      if (finalX < -REVEAL_WIDTH * 0.4) {
+        content.style.transition = 'transform 0.2s ease';
+        content.style.transform = 'translateX(-' + REVEAL_WIDTH + 'px)';
+        row.dataset.open = '1';
+        openSwipeRow = row;
+        haptic(6);
+      } else {
+        content.style.transition = 'transform 0.2s ease';
+        content.style.transform = 'translateX(0)';
+        row.dataset.open = '0';
+        if (openSwipeRow === row) openSwipeRow = null;
+      }
+    });
+
+    return row;
+  }
+
+  document.addEventListener('touchstart', (e) => {
+    if (openSwipeRow && !openSwipeRow.contains(e.target)) closeOpenSwipe();
+  }, { passive: true });
+
+  // ---------- natural-language time detection ----------
+  function parseEnglishTime(text) {
+    const re = /(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b/i;
+    const m = text.match(re);
+    if (!m) return null;
+    let hour = parseInt(m[1], 10);
+    const minute = m[2] ? parseInt(m[2], 10) : 0;
+    const period = m[3].toLowerCase();
+    if (period === 'am') { if (hour === 12) hour = 0; }
+    else { if (hour !== 12) hour += 12; }
+    return { hour, minute, match: m[0] };
+  }
+
+  function parseChineseTime(text) {
+    const numMap = {'零':0,'一':1,'二':2,'两':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9,'十一':11,'十二':12,'十':10};
+    const re = /(上午|早上|凌晨|早|中午|下午|晚上|晚)?\s*(十二|十一|零|一|二|两|三|四|五|六|七|八|九|十|\d{1,2})\s*[点點]\s*(半|一刻|三刻|(\d{1,2})\s*分)?/;
+    const m = text.match(re);
+    if (!m) return null;
+    const period = m[1] || '';
+    const hourStr = m[2];
+    let hour = numMap.hasOwnProperty(hourStr) ? numMap[hourStr] : parseInt(hourStr, 10);
+    if (isNaN(hour)) return null;
+    let minute = 0;
+    if (m[3] === '半') minute = 30;
+    else if (m[3] === '一刻') minute = 15;
+    else if (m[3] === '三刻') minute = 45;
+    else if (m[4]) minute = parseInt(m[4], 10);
+
+    if (period === '上午' || period === '早上' || period === '早' || period === '凌晨') {
+      if (hour === 12) hour = 0;
+    } else if (period === '中午') {
+      hour = 12;
+    } else if (period === '下午' || period === '晚上' || period === '晚') {
+      if (hour < 12) hour += 12;
+    } else {
+      if (hour >= 1 && hour <= 7) hour += 12;
+    }
+    if (hour > 23) hour = 23;
+    return { hour, minute, match: m[0] };
+  }
+
+  function parsePlainTime(text) {
+    const re = /\b([01]?\d|2[0-3]):([0-5]\d)\b/;
+    const m = text.match(re);
+    if (!m) return null;
+    return { hour: parseInt(m[1], 10), minute: parseInt(m[2], 10), match: m[0] };
+  }
+
+  function detectTimeInText(text) {
+    return parseEnglishTime(text) || parseChineseTime(text) || parsePlainTime(text);
+  }
+
+  // ---------- tab switching ----------
+  function switchTab(tab) {
+    haptic(8);
+    currentTab = tab;
+    document.querySelectorAll('.tab-item').forEach(el => el.classList.toggle('active', el.dataset.tab === tab));
+    document.getElementById('inboxView').style.display = tab === 'inbox' ? '' : 'none';
+    document.getElementById('calendarView').style.display = tab === 'calendar' ? '' : 'none';
+    document.getElementById('listsView').style.display = tab === 'lists' ? '' : 'none';
+  }
+  document.getElementById('tabInbox').onclick = () => switchTab('inbox');
+  document.getElementById('tabCalendar').onclick = () => switchTab('calendar');
+  document.getElementById('tabLists').onclick = () => switchTab('lists');
+
+  // ---------- calendar rendering ----------
+  function renderHeader() {
+    const sel = parseDate(selectedDate);
+    document.getElementById('monthLabel').textContent = MONTH_NAMES[sel.getMonth()];
+  }
+
+  function renderCalendar() {
+    const area = document.getElementById('calendarArea');
+    const sel = parseDate(selectedDate);
+    const newKey = sel.getFullYear() * 12 + sel.getMonth();
+    const grid = buildMonthGrid();
+    area.innerHTML = '';
+    area.appendChild(grid);
+    if (lastMonthKey !== null && newKey !== lastMonthKey) {
+      const dir = newKey > lastMonthKey ? 1 : -1;
+      grid.style.transition = 'none';
+      grid.style.transform = 'translateX(' + (dir * 26) + 'px)';
+      grid.style.opacity = '0';
+      void grid.offsetWidth;
+      requestAnimationFrame(() => {
+        grid.style.transition = 'transform 0.22s ease, opacity 0.22s ease';
+        grid.style.transform = 'translateX(0)';
+        grid.style.opacity = '1';
+      });
+    }
+    lastMonthKey = newKey;
+  }
+
+  function buildWeekStrip() {
+    const wrap = document.createElement('div');
+    wrap.className = 'week-strip';
+    const sel = parseDate(selectedDate);
+    const start = addDays(sel, -sel.getDay());
+    const today = todayStr();
+
+    for (let i = 0; i < 7; i++) {
+      const d = addDays(start, i);
+      const dStr = toStr(d);
+      const cell = document.createElement('div');
+      cell.className = 'week-day' + (dStr === selectedDate ? ' selected-col' : '');
+      cell.onclick = () => { haptic(6); selectedDate = dStr; renderAll(); };
+
+      const dow = document.createElement('div');
+      dow.className = 'dow-label';
+      dow.textContent = WEEKDAY_SHORT[d.getDay()];
+      cell.appendChild(dow);
+
+      const circle = document.createElement('div');
+      circle.className = 'date-circle' + (dStr === today ? ' today' : '') + (dStr === selectedDate ? ' selected' : '');
+      circle.textContent = d.getDate();
+      cell.appendChild(circle);
+
+      const dayTasks = tasksOnDate(dStr);
+      if (dayTasks.length > 0) {
+        const chips = document.createElement('div');
+        chips.className = 'day-chips';
+        dayTasks.slice(0,2).forEach(t => {
+          const c = document.createElement('div');
+          c.className = 'day-chip' + (t.done ? ' done' : '');
+          c.textContent = (t.dueTime ? fmtTime(t.dueTime) + ' ' : '') + t.title;
+          chips.appendChild(c);
+        });
+        if (dayTasks.length > 2) {
+          const more = document.createElement('div');
+          more.className = 'day-more';
+          more.textContent = '+' + (dayTasks.length - 2);
+          chips.appendChild(more);
+        }
+        cell.appendChild(chips);
+      }
+      wrap.appendChild(cell);
+    }
+    return wrap;
+  }
+
+  function buildMonthGrid() {
+    const wrap = document.createElement('div');
+    wrap.className = 'month-grid';
+    const sel = parseDate(selectedDate);
+    const year = sel.getFullYear(), month = sel.getMonth();
+    const firstOfMonth = new Date(year, month, 1);
+    const startOffset = firstOfMonth.getDay();
+    const gridStart = addDays(firstOfMonth, -startOffset);
+    const today = todayStr();
+
+    const dowRow = document.createElement('div');
+    dowRow.className = 'month-dow-row';
+    WEEKDAY_SHORT.forEach(l => { const d = document.createElement('div'); d.textContent = l; dowRow.appendChild(d); });
+    wrap.appendChild(dowRow);
+
+    const rows = document.createElement('div');
+    rows.className = 'month-rows';
+    let cursor = gridStart;
+    for (let r = 0; r < 6; r++) {
+      const row = document.createElement('div');
+      row.className = 'month-row';
+      for (let c = 0; c < 7; c++) {
+        const dStr = toStr(cursor);
+        const inMonth = cursor.getMonth() === month;
+        const cell = document.createElement('div');
+        cell.className = 'month-cell' + (inMonth ? '' : ' dim');
+        cell.onclick = () => { haptic(6); selectedDate = dStr; renderAll(); };
+
+        const inner = document.createElement('div');
+        inner.className = 'month-cell-inner' + (dStr === selectedDate ? ' selected-cell' : '');
+
+        const num = document.createElement('div');
+        num.className = 'num' + (dStr === today ? ' today' : '') + (dStr === selectedDate ? ' selected' : '');
+        num.textContent = cursor.getDate();
+        inner.appendChild(num);
+        cell.appendChild(inner);
+
+        if (tasksOnDate(dStr).length > 0) {
+          const dot = document.createElement('div');
+          dot.className = 'month-dot';
+          cell.appendChild(dot);
+        }
+        row.appendChild(cell);
+        cursor = addDays(cursor, 1);
+      }
+      rows.appendChild(row);
+      if (cursor.getMonth() !== month && r >= 4) break;
+    }
+    wrap.appendChild(rows);
+    return wrap;
+  }
+
+  function fmtLabel(dateStr) {
+    const d = parseDate(dateStr);
+    const isToday = dateStr === todayStr();
+    return MONTH_NAMES[d.getMonth()] + ' ' + d.getDate() + ', ' + DOW_FULL[d.getDay()] + (isToday ? ' (Today)' : '');
+  }
+
+  function renderDayPanel() {
+    document.getElementById('dayPanelLabel').textContent = fmtLabel(selectedDate);
+    const list = document.getElementById('dayTaskList');
+    list.innerHTML = '';
+
+    let tasks = tasksOnDate(selectedDate);
+    const pending = tasks.filter(t => !t.done).sort((a,b) => {
+      if (a.dueTime && b.dueTime) return a.dueTime < b.dueTime ? -1 : (a.dueTime > b.dueTime ? 1 : 0);
+      if (a.dueTime) return -1;
+      if (b.dueTime) return 1;
+      return b.createdAt - a.createdAt;
+    });
+    const done = tasks.filter(t => t.done).sort((a,b) => b.createdAt - a.createdAt);
+
+    if (pending.length === 0 && done.length === 0) {
+      list.innerHTML = emptyStateHTML();
+    } else {
+      pending.forEach(t => list.appendChild(renderTaskCard(t)));
+      done.forEach(t => list.appendChild(renderTaskCard(t)));
+    }
+
+    const unschedArea = document.getElementById('unscheduledArea');
+    unschedArea.innerHTML = '';
+    let unsched = state.tasks.filter(t => !t.dueDate);
+    if (unsched.length > 0) {
+      const label = document.createElement('div');
+      label.className = 'list-label';
+      label.textContent = 'No date (' + unsched.length + ')';
+      unschedArea.appendChild(label);
+      unsched.sort((a,b)=>b.createdAt-a.createdAt).forEach(t => unschedArea.appendChild(renderTaskCard(t)));
+    }
+  }
+
+  function emptyStateHTML() {
+    return '<div class="empty-state">' +
+      '<svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="var(--accent-dim)"/><rect x="28" y="24" width="44" height="56" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="2.5"/><rect x="40" y="18" width="20" height="12" rx="3" fill="var(--accent)"/><line x1="38" y1="42" x2="62" y2="42" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/><line x1="38" y1="52" x2="62" y2="52" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/><line x1="38" y1="62" x2="52" y2="62" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>' +
+      '<div class="t1">Nothing planned</div>' +
+      '<div class="t2">Tap the + button to add a task</div>' +
+      '</div>';
+  }
+
+  function renderTaskCard(t, opts) {
+    opts = opts || {};
+    const card = document.createElement('div');
+    card.className = 'task-card';
+    const cb = document.createElement('div');
+    cb.className = 'checkbox' + (t.done ? ' checked' : '');
+    cb.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>';
+    cb.onclick = () => toggleTask(t.id);
+
+    const body = document.createElement('div');
+    body.className = 'task-body';
+    body.onclick = () => openTaskDetail(t.id);
+    const title = document.createElement('div');
+    const isOverdue = !t.done && t.dueDate && t.dueDate < todayStr();
+    title.className = 'task-title' + (t.done ? ' done' : '') + (isOverdue ? ' overdue' : '');
+    title.textContent = t.title;
+    body.appendChild(title);
+
+    if (t.description) {
+      const desc = document.createElement('div');
+      desc.className = 'task-desc-preview';
+      desc.textContent = t.description;
+      body.appendChild(desc);
+    }
+
+    const meta = document.createElement('div');
+    meta.className = 'task-meta';
+    if (opts.showDate && t.dueDate) {
+      const dateTag = document.createElement('span');
+      dateTag.className = 'meta-tag' + (isOverdue ? ' overdue' : '');
+      dateTag.textContent = fmtShortDate(t.dueDate) + (t.dueTime ? ' · ' + fmtTime(t.dueTime) : '');
+      meta.appendChild(dateTag);
+    } else if (t.dueTime) {
+      const timeTag = document.createElement('span');
+      timeTag.className = 'meta-tag';
+      timeTag.textContent = fmtTime(t.dueTime);
+      meta.appendChild(timeTag);
+    }
+    if (meta.children.length > 0) body.appendChild(meta);
+
+    card.appendChild(cb); card.appendChild(body);
+    return makeSwipeRow(card, () => deleteTask(t.id), 'radius-card');
+  }
+
+  // ---------- Inbox rendering ----------
+  let inboxSearchQuery = '';
+
+  function renderInbox() {
+    const container = document.getElementById('inboxTaskList');
+    container.innerHTML = '';
+
+    const q = inboxSearchQuery.trim().toLowerCase();
+    let all = state.tasks;
+    if (q) all = all.filter(t => t.title.toLowerCase().includes(q));
+
+    if (all.length === 0) {
+      if (q) {
+        container.innerHTML = '<div class="empty-state">' +
+          '<svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="var(--accent-dim)"/><circle cx="44" cy="44" r="16" fill="none" stroke="var(--accent)" stroke-width="4"/><line x1="55" y1="55" x2="68" y2="68" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/></svg>' +
+          '<div class="t1">No matching tasks</div>' +
+          '<div class="t2">Try a different search</div>' +
+          '</div>';
+      } else {
+        container.innerHTML = emptyStateHTML();
+      }
+      return;
+    }
+
+    const pendingDated = all.filter(t => !t.done && t.dueDate).sort((a,b) => {
+      const ka = a.dueDate + 'T' + (a.dueTime || '00:00');
+      const kb = b.dueDate + 'T' + (b.dueTime || '00:00');
+      return ka < kb ? -1 : (ka > kb ? 1 : 0);
+    });
+    const pendingNoDate = all.filter(t => !t.done && !t.dueDate).sort((a,b) => b.createdAt - a.createdAt);
+    const done = all.filter(t => t.done).sort((a,b) => b.createdAt - a.createdAt);
+
+    pendingDated.forEach(t => container.appendChild(renderTaskCard(t, { showDate: true })));
+
+    if (pendingNoDate.length > 0) {
+      const label = document.createElement('div');
+      label.className = 'list-label';
+      label.textContent = 'No date';
+      container.appendChild(label);
+      pendingNoDate.forEach(t => container.appendChild(renderTaskCard(t)));
+    }
+
+    if (done.length > 0) {
+      const label = document.createElement('div');
+      label.className = 'list-label';
+      label.textContent = 'Completed (' + done.length + ')';
+      container.appendChild(label);
+      done.forEach(t => container.appendChild(renderTaskCard(t, { showDate: true })));
+    }
+  }
+
+  const inboxSearchInput = document.getElementById('inboxSearchInput');
+  const inboxSearchClear = document.getElementById('inboxSearchClear');
+  inboxSearchInput.addEventListener('input', () => {
+    inboxSearchQuery = inboxSearchInput.value;
+    inboxSearchClear.style.display = inboxSearchQuery ? '' : 'none';
+    renderInbox();
+  });
+  inboxSearchClear.addEventListener('click', () => {
+    haptic(6);
+    inboxSearchInput.value = '';
+    inboxSearchQuery = '';
+    inboxSearchClear.style.display = 'none';
+    renderInbox();
+    inboxSearchInput.focus();
+  });
+
+  // ---------- Lists rendering ----------
+  function renderLists() {
+    const container = document.getElementById('listsContainer');
+    container.innerHTML = '';
+
+    if (state.lists.length === 0) {
+      container.innerHTML = '<div class="empty-state">' +
+        '<svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="var(--accent-dim)"/><path d="M32 34h36M32 50h36M32 66h20" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/></svg>' +
+        '<div class="t1">No lists yet</div>' +
+        '<div class="t2">Tap the + button to create one</div>' +
+        '</div>';
+    } else {
+      state.lists.forEach(l => container.appendChild(renderListSummaryCard(l)));
+    }
+
+    if (listsSubView === 'detail' && currentOpenListId) {
+      renderListDetail();
+    }
+  }
+
+  function renderListSummaryCard(l) {
+    const card = document.createElement('div');
+    card.className = 'list-summary-card';
+    card.onclick = () => openListDetail(l.id);
+
+    const left = document.createElement('div');
+    const name = document.createElement('div');
+    name.className = 'list-summary-name';
+    name.textContent = l.name;
+    const doneCount = l.items.filter(i => i.done).length;
+    const count = document.createElement('div');
+    count.className = 'list-summary-count';
+    count.textContent = l.items.length === 0 ? 'No items' : (doneCount + ' / ' + l.items.length + ' done');
+    left.appendChild(name); left.appendChild(count);
+
+    card.appendChild(left);
+    return makeSwipeRow(card, () => deleteList(l.id), 'radius-summary summary-swipe');
+  }
+
+  function openListDetail(listId) {
+    haptic(8);
+    currentOpenListId = listId;
+    listsSubView = 'detail';
+    document.getElementById('listsOverview').style.display = 'none';
+    document.getElementById('listsDetail').style.display = '';
+    renderListDetail();
+  }
+  function closeListDetail() {
+    haptic(8);
+    listsSubView = 'overview';
+    currentOpenListId = null;
+    document.getElementById('listsOverview').style.display = '';
+    document.getElementById('listsDetail').style.display = 'none';
+  }
+  document.getElementById('listBackBtn').onclick = closeListDetail;
+
+  function renderListDetail() {
+    const l = state.lists.find(l => l.id === currentOpenListId);
+    if (!l) { closeListDetail(); return; }
+    document.getElementById('listDetailName').textContent = l.name;
+    const container = document.getElementById('listDetailItems');
+    container.innerHTML = '';
+
+    if (l.items.length === 0) {
+      container.innerHTML = '<div class="empty-state">' +
+        '<svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="var(--accent-dim)"/><path d="M32 34h36M32 50h36M32 66h20" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/></svg>' +
+        '<div class="t1">Nothing here yet</div>' +
+        '<div class="t2">Tap the + button to add an item</div>' +
+        '</div>';
+      return;
+    }
+
+    const pending = l.items.filter(i => !i.done).sort((a,b) => b.createdAt - a.createdAt);
+    const done = l.items.filter(i => i.done).sort((a,b) => b.createdAt - a.createdAt);
+    [...pending, ...done].forEach(item => container.appendChild(renderListItemRow(l.id, item)));
+  }
+
+  function renderListItemRow(listId, item) {
+    const row = document.createElement('div');
+    row.className = 'list-item-row';
+    const cb = document.createElement('div');
+    cb.className = 'checkbox' + (item.done ? ' checked' : '');
+    cb.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>';
+    cb.onclick = () => toggleListItem(listId, item.id);
+    const title = document.createElement('div');
+    title.className = 'list-item-title' + (item.done ? ' done' : '');
+    title.textContent = item.title;
+    attachDoubleTap(title, (e) => {
+      e.stopPropagation();
+      haptic(8);
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.className = 'list-item-rename-input';
+      input.value = item.title;
+      title.replaceWith(input);
+      input.focus();
+      input.select();
+      const commit = () => {
+        const newTitle = input.value.trim();
+        if (newTitle) { item.title = newTitle; save(); }
+        renderAll();
+      };
+      input.addEventListener('blur', commit);
+      input.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') input.blur(); });
+    });
+    row.appendChild(cb); row.appendChild(title);
+    return makeSwipeRow(row, () => deleteListItem(listId, item.id), 'listitem-swipe');
+  }
+
+  // ---------- list name inline rename (double-click in detail header) ----------
+  const listDetailNameEl = document.getElementById('listDetailName');
+  const listDetailNameInput = document.getElementById('listDetailNameInput');
+  attachDoubleTap(listDetailNameEl, () => {
+    const l = state.lists.find(x => x.id === currentOpenListId);
+    if (!l) return;
+    haptic(8);
+    listDetailNameInput.value = l.name;
+    listDetailNameEl.style.display = 'none';
+    listDetailNameInput.style.display = '';
+    listDetailNameInput.focus();
+    listDetailNameInput.select();
+  });
+  function commitListNameRename() {
+    const l = state.lists.find(x => x.id === currentOpenListId);
+    listDetailNameInput.style.display = 'none';
+    listDetailNameEl.style.display = '';
+    if (!l) return;
+    const newName = listDetailNameInput.value.trim();
+    if (newName) { l.name = newName; save(); }
+    renderAll();
+  }
+  listDetailNameInput.addEventListener('blur', commitListNameRename);
+  listDetailNameInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') listDetailNameInput.blur(); });
+
+  // ---------- render everything ----------
+  function renderAll() {
+    renderHeader();
+    renderCalendar();
+    renderDayPanel();
+    renderInbox();
+    renderLists();
+    document.getElementById('newTaskDate').value = selectedDate;
+  }
+
+  // ---------- task mutations ----------
+  function addTask(title, dueDate, dueTime, description) {
+    state.tasks.push({ id: uid(), title, done:false, dueDate: dueDate||null, dueTime: dueTime||null, description: description||null, createdAt: Date.now() });
+    save(); renderAll();
+  }
+  function toggleTask(id) { haptic(10); const t = state.tasks.find(t=>t.id===id); if (t) { t.done = !t.done; save(); renderAll(); } }
+  function deleteTask(id) {
+    const idx = state.tasks.findIndex(t=>t.id===id);
+    if (idx === -1) return;
+    haptic(15);
+    const removed = state.tasks.splice(idx, 1)[0];
+    lastDeleted = { type: 'task', data: removed, index: idx };
+    save(); renderAll();
+    showUndoToast('Task deleted');
+  }
+
+  // ---------- list mutations ----------
+  function addList(name) { state.lists.push({ id: uid(), name, items: [], createdAt: Date.now() }); save(); renderAll(); }
+  function deleteList(id) {
+    const idx = state.lists.findIndex(l=>l.id===id);
+    if (idx === -1) return;
+    haptic(15);
+    const removed = state.lists.splice(idx, 1)[0];
+    lastDeleted = { type: 'list', data: removed, index: idx };
+    if (currentOpenListId === id) closeListDetail();
+    save(); renderAll();
+    showUndoToast('List deleted');
+  }
+  function addListItem(listId, title) {
+    const l = state.lists.find(l=>l.id===listId);
+    if (!l) return;
+    l.items.push({ id: uid(), title, done:false, createdAt: Date.now() });
+    save(); renderAll();
+  }
+  function toggleListItem(listId, itemId) {
+    haptic(10);
+    const l = state.lists.find(l=>l.id===listId);
+    if (!l) return;
+    const item = l.items.find(i=>i.id===itemId);
+    if (item) { item.done = !item.done; save(); renderAll(); }
+  }
+  function deleteListItem(listId, itemId) {
+    const l = state.lists.find(l=>l.id===listId);
+    if (!l) return;
+    const idx = l.items.findIndex(i=>i.id===itemId);
+    if (idx === -1) return;
+    haptic(12);
+    const removed = l.items.splice(idx, 1)[0];
+    lastDeleted = { type: 'listItem', listId: listId, data: removed, index: idx };
+    save(); renderAll();
+    showUndoToast('Item deleted');
+  }
+
+  // ---------- undo ----------
+  let lastDeleted = null;
+  let undoToastTimer = null;
+  const undoToast = document.getElementById('undoToast');
+  const undoToastMsg = document.getElementById('undoToastMsg');
+
+  function showUndoToast(message) {
+    undoToastMsg.textContent = message;
+    undoToast.classList.add('show');
+    if (undoToastTimer) clearTimeout(undoToastTimer);
+    undoToastTimer = setTimeout(() => {
+      undoToast.classList.remove('show');
+      lastDeleted = null;
+    }, 5000);
+  }
+  function hideUndoToast() {
+    undoToast.classList.remove('show');
+    if (undoToastTimer) clearTimeout(undoToastTimer);
+  }
+  function undoDelete() {
+    if (!lastDeleted) return;
+    haptic(10);
+    if (lastDeleted.type === 'task') {
+      state.tasks.splice(Math.min(lastDeleted.index, state.tasks.length), 0, lastDeleted.data);
+    } else if (lastDeleted.type === 'list') {
+      state.lists.splice(Math.min(lastDeleted.index, state.lists.length), 0, lastDeleted.data);
+    } else if (lastDeleted.type === 'listItem') {
+      const l = state.lists.find(l => l.id === lastDeleted.listId);
+      if (l) l.items.splice(Math.min(lastDeleted.index, l.items.length), 0, lastDeleted.data);
+    }
+    lastDeleted = null;
+    hideUndoToast();
+    save(); renderAll();
+  }
+  document.getElementById('undoBtn').onclick = undoDelete;
+
+  // ---------- task detail (view/edit + description) ----------
+  let editingTaskId = null;
+  let lastDetectedTimeMatchDetail = null;
+  const taskDetailOverlay = document.getElementById('taskDetailOverlay');
+  const taskDetailTitleInput = document.getElementById('taskDetailTitleInput');
+  const taskDetailTimeHint = document.getElementById('taskDetailTimeHint');
+
+  function openTaskDetail(id) {
+    const t = state.tasks.find(x => x.id === id);
+    if (!t) return;
+    editingTaskId = id;
+    taskDetailTitleInput.value = t.title;
+    document.getElementById('taskDetailDate').value = t.dueDate || '';
+    document.getElementById('taskDetailTime').value = t.dueTime || '';
+    document.getElementById('taskDetailDesc').value = t.description || '';
+    lastDetectedTimeMatchDetail = null;
+    taskDetailTimeHint.style.display = 'none';
+    taskDetailOverlay.classList.remove('hidden');
+  }
+  function closeTaskDetail() {
+    taskDetailOverlay.classList.add('hidden');
+    editingTaskId = null;
+    lastDetectedTimeMatchDetail = null;
+    taskDetailTimeHint.style.display = 'none';
+  }
+  function saveTaskDetail() {
+    if (!editingTaskId) return;
+    const t = state.tasks.find(x => x.id === editingTaskId);
+    if (!t) { closeTaskDetail(); return; }
+    haptic(10);
+    let newTitle = taskDetailTitleInput.value.trim();
+    if (lastDetectedTimeMatchDetail && newTitle.includes(lastDetectedTimeMatchDetail)) {
+      const stripped = newTitle.split(lastDetectedTimeMatchDetail).join('').replace(/\s{2,}/g, ' ').trim();
+      if (stripped) newTitle = stripped;
+    }
+    if (newTitle) t.title = newTitle;
+    t.dueDate = document.getElementById('taskDetailDate').value || null;
+    t.dueTime = document.getElementById('taskDetailTime').value || null;
+    const desc = document.getElementById('taskDetailDesc').value.trim();
+    t.description = desc || null;
+    save(); renderAll();
+    closeTaskDetail();
+  }
+  taskDetailTitleInput.addEventListener('input', () => {
+    const detected = detectTimeInText(taskDetailTitleInput.value);
+    if (detected) {
+      lastDetectedTimeMatchDetail = detected.match;
+      document.getElementById('taskDetailTime').value = pad(detected.hour) + ':' + pad(detected.minute);
+      taskDetailTimeHint.style.display = '';
+    } else {
+      lastDetectedTimeMatchDetail = null;
+      taskDetailTimeHint.style.display = 'none';
+    }
+  });
+  document.getElementById('taskDetailClose').onclick = () => { haptic(8); closeTaskDetail(); };
+  document.getElementById('taskDetailSaveBtn').onclick = saveTaskDetail;
+  taskDetailOverlay.addEventListener('click', (e) => { if (e.target === taskDetailOverlay) closeTaskDetail(); });
+
+  // ---------- persistence ----------
+  let saveTimer = null;
+  function save() {
+    if (!ready) return;
+    setStatus('saving');
+    if (saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(doSave, 300);
+  }
+  const STORE_KEY = 'todo-app-state';
+  let lastKnownUpdatedAt = 0;
+  async function doSave() {
+    try {
+      if (window.storage) {
+        const payload = { tasks: state.tasks, lists: state.lists, updatedAt: Date.now() };
+        lastKnownUpdatedAt = payload.updatedAt;
+        await window.storage.set(STORE_KEY, JSON.stringify(payload), false);
+        setStatus('online');
+      } else {
+        localStorage.setItem('todoAppState', JSON.stringify(state)); setStatus('offline');
+      }
+    } catch (e) {
+      console.error('save failed', e);
+      setStatus('offline');
+      try { localStorage.setItem('todoAppState', JSON.stringify(state)); } catch(e2) {}
+    }
+  }
+
+  async function init() {
+    try {
+      const local = localStorage.getItem('todoAppState');
+      if (local) {
+        const parsed = JSON.parse(local);
+        if (parsed && parsed.tasks) state = { tasks: parsed.tasks, lists: parsed.lists || [] };
+      }
+    } catch (e) {}
+    renderAll();
+
+    try {
+      if (window.storage) {
+        let remote = null;
+        try { remote = await window.storage.get(STORE_KEY, false); } catch (e) { remote = null; }
+        if (remote && remote.value) {
+          const parsed = JSON.parse(remote.value);
+          if (parsed && parsed.tasks) {
+            state = { tasks: parsed.tasks, lists: parsed.lists || [] };
+            lastKnownUpdatedAt = parsed.updatedAt || 0;
+          }
+        } else {
+          const payload = { tasks: state.tasks, lists: state.lists, updatedAt: Date.now() };
+          lastKnownUpdatedAt = payload.updatedAt;
+          await window.storage.set(STORE_KEY, JSON.stringify(payload), false);
+        }
+        ready = true; setStatus('online'); renderAll();
+
+        // window.storage has no realtime push, so poll for changes from your other devices/sessions
+        setInterval(async () => {
+          try {
+            const r = await window.storage.get(STORE_KEY, false);
+            if (r && r.value) {
+              const parsed = JSON.parse(r.value);
+              if (parsed && parsed.updatedAt && parsed.updatedAt !== lastKnownUpdatedAt) {
+                lastKnownUpdatedAt = parsed.updatedAt;
+                state = { tasks: parsed.tasks || [], lists: parsed.lists || [] };
+                renderAll();
+              }
+            }
+            setStatus('online');
+          } catch (err) { console.error('sync poll error', err); setStatus('offline'); }
+        }, 5000);
+      } else { ready = true; setStatus('offline'); }
+    } catch (e) { console.error('storage init failed', e); ready = true; setStatus('offline'); }
+  }
+
+  // ---------- add overlay (context-aware: task or list) ----------
+  const addOverlay = document.getElementById('addOverlay');
+  const newTaskInput = document.getElementById('newTaskInput');
+  const addPanelTitle = document.getElementById('addPanelTitle');
+  const addOptions = document.getElementById('addOptions');
+
+  function openAddPanel() {
+    if (currentTab === 'lists') {
+      if (listsSubView === 'detail' && currentOpenListId) {
+        addMode = 'listItem';
+        addPanelTitle.textContent = 'New Item';
+        newTaskInput.placeholder = 'Item name';
+      } else {
+        addMode = 'list';
+        addPanelTitle.textContent = 'New List';
+        newTaskInput.placeholder = 'List name';
+      }
+      addOptions.classList.add('hidden');
+    } else {
+      addMode = 'task';
+      addPanelTitle.textContent = 'New Task';
+      newTaskInput.placeholder = 'What do you need to do?';
+      addOptions.classList.remove('hidden');
+      document.getElementById('newTaskDate').value = currentTab === 'calendar' ? selectedDate : '';
+      document.getElementById('newTaskTime').value = '';
+      document.getElementById('newTaskDesc').value = '';
+      lastDetectedTimeMatch = null;
+      document.getElementById('timeHint').style.display = 'none';
+    }
+    addOverlay.classList.remove('hidden');
+    newTaskInput.focus();
+  }
+  function closeAddPanel() {
+    addOverlay.classList.add('hidden');
+    newTaskInput.value = '';
+    document.getElementById('newTaskDesc').value = '';
+    lastDetectedTimeMatch = null;
+    document.getElementById('timeHint').style.display = 'none';
+  }
+  function submitAdd() {
+    let title = newTaskInput.value.trim();
+    if (!title) return;
+    haptic(10);
+    if (addMode === 'list') {
+      addList(title);
+    } else if (addMode === 'listItem') {
+      addListItem(currentOpenListId, title);
+    } else {
+      let dueTime = document.getElementById('newTaskTime').value || null;
+      if (lastDetectedTimeMatch && title.includes(lastDetectedTimeMatch)) {
+        title = title.split(lastDetectedTimeMatch).join('').replace(/\s{2,}/g, ' ').trim();
+        if (!title) title = newTaskInput.value.trim();
+      }
+      const dueDate = document.getElementById('newTaskDate').value || null;
+      const description = document.getElementById('newTaskDesc').value.trim() || null;
+      addTask(title, dueDate, dueTime, description);
+    }
+    closeAddPanel();
+  }
+
+  newTaskInput.addEventListener('input', () => {
+    if (addMode !== 'task') return;
+    const detected = detectTimeInText(newTaskInput.value);
+    const timeHint = document.getElementById('timeHint');
+    if (detected) {
+      lastDetectedTimeMatch = detected.match;
+      document.getElementById('newTaskTime').value = pad(detected.hour) + ':' + pad(detected.minute);
+      timeHint.style.display = '';
+    } else {
+      lastDetectedTimeMatch = null;
+      timeHint.style.display = 'none';
+    }
+  });
+
+  document.getElementById('fabBtn').onclick = () => { haptic(10); openAddPanel(); };
+  document.getElementById('addClose').onclick = () => { haptic(8); closeAddPanel(); };
+  document.getElementById('confirmBtn').onclick = submitAdd;
+  newTaskInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitAdd(); });
+  addOverlay.addEventListener('click', (e) => { if (e.target === addOverlay) closeAddPanel(); });
+
+  document.getElementById('todayBtn').onclick = () => { haptic(8); selectedDate = todayStr(); renderAll(); };
+  document.getElementById('prevMonth').onclick = () => { haptic(6); selectedDate = toStr(addMonths(parseDate(selectedDate), -1)); renderAll(); };
+  document.getElementById('nextMonth').onclick = () => { haptic(6); selectedDate = toStr(addMonths(parseDate(selectedDate), 1)); renderAll(); };
+
+  // ---------- swipe to change month ----------
+  const calendarArea = document.getElementById('calendarArea');
+  let touchStartX = 0, touchStartY = 0, touchActive = false;
+  calendarArea.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchActive = true;
+  }, { passive: true });
+  calendarArea.addEventListener('touchend', (e) => {
+    if (!touchActive) return;
+    touchActive = false;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      haptic(8);
+      selectedDate = toStr(addMonths(parseDate(selectedDate), dx < 0 ? 1 : -1));
+      renderAll();
+    }
+  }, { passive: true });
+
+  init();
+})();
+</script>
+</body>
+</html>
