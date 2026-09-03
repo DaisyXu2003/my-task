@@ -40,7 +40,7 @@
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
-  .app { max-width:640px; margin:0 auto; padding-bottom:150px; }
+  .app { max-width:640px; margin:0 auto; padding-bottom:163px; }
 
   header { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 6px; }
   .icon-btn { width:34px; height:34px; display:flex; align-items:center; justify-content:center; border-radius:0; color:var(--text); cursor:pointer; flex:0 0 auto; }
@@ -73,6 +73,7 @@
   .day-chips { margin-top:6px; width:100%; display:flex; flex-direction:column; gap:3px; align-items:center; }
   .day-chip { font-size:10px; color:var(--text-dim); background:rgba(120,120,120,0.08); border-radius:0; padding:2px 4px; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:90%; text-align:center; }
   .day-chip.done { text-decoration:line-through; opacity:0.5; }
+  .day-chip.abandoned { text-decoration:line-through; opacity:0.4; }
   .day-more { font-size:9px; color:var(--text-dim); }
 
   .month-grid { padding:6px 10px 10px; }
@@ -117,6 +118,13 @@
   .task-title { font-size:15px; line-height:1.4; word-break:break-word; }
   .task-title.done { color:var(--done); text-decoration:line-through; }
   .task-title.overdue { color:var(--danger); }
+  .task-title.abandoned { color:var(--done); text-decoration:line-through; opacity:0.6; }
+  .meta-tag.abandoned-tag { color:var(--text-dim); font-style:italic; }
+  .detail-secondary-btn {
+    width:100%; margin-top:10px; padding:12px; border:1px solid var(--border);
+    background:none; color:var(--text-dim); border-radius:0; font-size:14px; cursor:pointer;
+  }
+  .detail-secondary-btn.is-abandoned { color:var(--accent); border-color:var(--accent); }
   .task-desc-preview {
     font-size:13px; color:var(--text-dim); margin-top:2px;
     overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
@@ -154,7 +162,7 @@
   /* floating add button */
   .fab-btn {
     position: fixed;
-    bottom: 88px;
+    bottom: 101px;
     right: 20px;
     width: 56px;
     height: 56px;
@@ -190,7 +198,7 @@
     flex-direction: column;
     align-items: center;
     gap: 3px;
-    padding: 9px 4px 8px;
+    padding: 16px 4px 14px;
     background: none;
     border: none;
     color: var(--text-dim);
@@ -414,6 +422,7 @@
       </div>
     </div>
     <button class="detail-save-btn" id="taskDetailSaveBtn">Save</button>
+    <button class="detail-secondary-btn" id="taskDetailAbandonBtn">Give Up on This Task</button>
   </div>
 </div>
 
@@ -686,7 +695,7 @@
         chips.className = 'day-chips';
         dayTasks.slice(0,2).forEach(t => {
           const c = document.createElement('div');
-          c.className = 'day-chip' + (t.done ? ' done' : '');
+          c.className = 'day-chip' + (t.done ? ' done' : '') + (t.abandoned ? ' abandoned' : '');
           c.textContent = (t.dueTime ? fmtTime(t.dueTime) + ' ' : '') + t.title;
           chips.appendChild(c);
         });
@@ -767,19 +776,27 @@
     list.innerHTML = '';
 
     let tasks = tasksOnDate(selectedDate);
-    const pending = tasks.filter(t => !t.done).sort((a,b) => {
+    const pending = tasks.filter(t => !t.done && !t.abandoned).sort((a,b) => {
       if (a.dueTime && b.dueTime) return a.dueTime < b.dueTime ? -1 : (a.dueTime > b.dueTime ? 1 : 0);
       if (a.dueTime) return -1;
       if (b.dueTime) return 1;
       return b.createdAt - a.createdAt;
     });
     const done = tasks.filter(t => t.done).sort((a,b) => b.createdAt - a.createdAt);
+    const abandoned = tasks.filter(t => t.abandoned).sort((a,b) => b.createdAt - a.createdAt);
 
-    if (pending.length === 0 && done.length === 0) {
+    if (pending.length === 0 && done.length === 0 && abandoned.length === 0) {
       list.innerHTML = emptyStateHTML();
     } else {
       pending.forEach(t => list.appendChild(renderTaskCard(t)));
       done.forEach(t => list.appendChild(renderTaskCard(t)));
+      if (abandoned.length > 0) {
+        const label = document.createElement('div');
+        label.className = 'list-label';
+        label.textContent = 'Given up (' + abandoned.length + ')';
+        list.appendChild(label);
+        abandoned.forEach(t => list.appendChild(renderTaskCard(t)));
+      }
     }
 
     const unschedArea = document.getElementById('unscheduledArea');
@@ -815,8 +832,8 @@
     body.className = 'task-body';
     body.onclick = () => openTaskDetail(t.id);
     const title = document.createElement('div');
-    const isOverdue = !t.done && t.dueDate && t.dueDate < todayStr();
-    title.className = 'task-title' + (t.done ? ' done' : '') + (isOverdue ? ' overdue' : '');
+    const isOverdue = !t.done && !t.abandoned && t.dueDate && t.dueDate < todayStr();
+    title.className = 'task-title' + (t.done ? ' done' : '') + (t.abandoned ? ' abandoned' : '') + (isOverdue ? ' overdue' : '');
     title.textContent = t.title;
     body.appendChild(title);
 
@@ -829,6 +846,12 @@
 
     const meta = document.createElement('div');
     meta.className = 'task-meta';
+    if (t.abandoned) {
+      const abTag = document.createElement('span');
+      abTag.className = 'meta-tag abandoned-tag';
+      abTag.textContent = 'Given up';
+      meta.appendChild(abTag);
+    }
     if (opts.showDate && t.dueDate) {
       const dateTag = document.createElement('span');
       dateTag.className = 'meta-tag' + (isOverdue ? ' overdue' : '');
@@ -870,13 +893,14 @@
       return;
     }
 
-    const pendingDated = all.filter(t => !t.done && t.dueDate).sort((a,b) => {
+    const pendingDated = all.filter(t => !t.done && !t.abandoned && t.dueDate).sort((a,b) => {
       const ka = a.dueDate + 'T' + (a.dueTime || '00:00');
       const kb = b.dueDate + 'T' + (b.dueTime || '00:00');
       return ka < kb ? -1 : (ka > kb ? 1 : 0);
     });
-    const pendingNoDate = all.filter(t => !t.done && !t.dueDate).sort((a,b) => b.createdAt - a.createdAt);
+    const pendingNoDate = all.filter(t => !t.done && !t.abandoned && !t.dueDate).sort((a,b) => b.createdAt - a.createdAt);
     const done = all.filter(t => t.done).sort((a,b) => b.createdAt - a.createdAt);
+    const abandoned = all.filter(t => t.abandoned).sort((a,b) => b.createdAt - a.createdAt);
 
     pendingDated.forEach(t => container.appendChild(renderTaskCard(t, { showDate: true })));
 
@@ -894,6 +918,14 @@
       label.textContent = 'Completed (' + done.length + ')';
       container.appendChild(label);
       done.forEach(t => container.appendChild(renderTaskCard(t, { showDate: true })));
+    }
+
+    if (abandoned.length > 0) {
+      const label = document.createElement('div');
+      label.className = 'list-label';
+      label.textContent = 'Given up (' + abandoned.length + ')';
+      container.appendChild(label);
+      abandoned.forEach(t => container.appendChild(renderTaskCard(t, { showDate: true })));
     }
   }
 
@@ -1059,10 +1091,18 @@
 
   // ---------- task mutations ----------
   function addTask(title, dueDate, dueTime, description) {
-    state.tasks.push({ id: uid(), title, done:false, dueDate: dueDate||null, dueTime: dueTime||null, description: description||null, createdAt: Date.now() });
+    state.tasks.push({ id: uid(), title, done:false, abandoned:false, dueDate: dueDate||null, dueTime: dueTime||null, description: description||null, createdAt: Date.now() });
     save(); renderAll();
   }
-  function toggleTask(id) { haptic(10); const t = state.tasks.find(t=>t.id===id); if (t) { t.done = !t.done; save(); renderAll(); } }
+  function toggleTask(id) { haptic(10); const t = state.tasks.find(t=>t.id===id); if (t) { t.done = !t.done; if (t.done) t.abandoned = false; save(); renderAll(); } }
+  function toggleAbandonTask(id) {
+    haptic(10);
+    const t = state.tasks.find(t=>t.id===id);
+    if (!t) return;
+    t.abandoned = !t.abandoned;
+    if (t.abandoned) t.done = false;
+    save(); renderAll();
+  }
   function deleteTask(id) {
     const idx = state.tasks.findIndex(t=>t.id===id);
     if (idx === -1) return;
@@ -1152,6 +1192,7 @@
   const taskDetailOverlay = document.getElementById('taskDetailOverlay');
   const taskDetailTitleInput = document.getElementById('taskDetailTitleInput');
   const taskDetailTimeHint = document.getElementById('taskDetailTimeHint');
+  const taskDetailAbandonBtn = document.getElementById('taskDetailAbandonBtn');
 
   function openTaskDetail(id) {
     const t = state.tasks.find(x => x.id === id);
@@ -1163,6 +1204,8 @@
     document.getElementById('taskDetailDesc').value = t.description || '';
     lastDetectedTimeMatchDetail = null;
     taskDetailTimeHint.style.display = 'none';
+    taskDetailAbandonBtn.textContent = t.abandoned ? 'Restore This Task' : 'Give Up on This Task';
+    taskDetailAbandonBtn.classList.toggle('is-abandoned', !!t.abandoned);
     taskDetailOverlay.classList.remove('hidden');
   }
   function closeTaskDetail() {
@@ -1202,6 +1245,11 @@
   });
   document.getElementById('taskDetailClose').onclick = () => { haptic(8); closeTaskDetail(); };
   document.getElementById('taskDetailSaveBtn').onclick = saveTaskDetail;
+  taskDetailAbandonBtn.onclick = () => {
+    if (!editingTaskId) return;
+    toggleAbandonTask(editingTaskId);
+    closeTaskDetail();
+  };
   taskDetailOverlay.addEventListener('click', (e) => { if (e.target === taskDetailOverlay) closeTaskDetail(); });
 
   // ---------- persistence ----------
